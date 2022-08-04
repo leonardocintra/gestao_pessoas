@@ -1,2 +1,2 @@
-# gestao_pessoas
-Gestão de RH
+# Gestão de Pessoas
+Gestão de Recursos Humanos para todas as empresas
