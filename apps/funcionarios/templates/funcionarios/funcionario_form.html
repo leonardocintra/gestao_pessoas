@@ -1,14 +1,27 @@
 {% extends 'base.html' %}
 
 {% block main %}
+<div class="row">
 
-<h1> Cadastro de funcionarios </h1>
+    <h1> Cadastro de funcionarios - {{ object }} </h1>
 
-<form action="" method="post">
-    {% csrf_token %}
+    <form action="" method="post">
+        {% csrf_token %}
 
-    {{ form.as_div }}
+        {{ form.as_div }}
 
-    <button class="btn btn-success" type="submit">Salvar</button>
-</form>
+        <button class="btn btn-success" type="submit">Salvar</button>
+    </form>
+
+    <hr/>
+
+    <a href="{% url 'create_documento' object.id %}" class="btn btn-warning">Adicionar documento</a>
+
+    <hr/>
+
+    {% for documento in object.documento_set.all %}
+        <a href="{{ documento.arquivo.url }}" target="_blank">{{ documento }}</a>
+    {% endfor %}
+
+</div>
 {% endblock main %}

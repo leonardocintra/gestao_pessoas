@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from apps.funcionarios.models import Funcionario
 
@@ -11,3 +12,6 @@ class Documento(models.Model):
 
     def __str__(self) -> str:
         return self.descricao
+
+    def get_absolute_url(self):
+        return reverse("update_funcionario", args=[self.pertence_a.id])
