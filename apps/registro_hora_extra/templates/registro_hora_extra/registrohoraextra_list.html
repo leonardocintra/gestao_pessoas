@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Listagem de banco de horas </h1>
+
+    <a class="btn btn-success" href="{% url 'create_registro_hora_extra' %}">
+        Novo registro
+    </a>
+
+    <br/>
+    <br/>
+
+    {% for registro_hora_extra in object_list %}
+        <a href="{% url 'update_registro_hora_extra' registro_hora_extra.pk %}">
+            {{ registro_hora_extra }}
+        </a>
+        <a class="btn btn-danger" href="{% url 'delete_registro_hora_extra' registro_hora_extra.pk %}">
+            Excluir
+        </a>
+        <br />
+    {% empty %}
+        <h3> Não existe registro de horas extras para esse funcionário </h3>
+    {% endfor %}
+
+{% endblock main %}

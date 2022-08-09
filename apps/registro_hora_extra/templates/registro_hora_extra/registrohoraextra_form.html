@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="row">
+
+    <h1> Registro de horas - {{ object }} </h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        {{ form.as_div }}
+
+        <button class="btn btn-success" type="submit">Salvar</button>
+    </form>
+</div>
+{% endblock main %}
