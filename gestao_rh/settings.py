@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-import os
 from pathlib import Path
 
 
@@ -27,7 +26,7 @@ SECRET_KEY = "django-insecure-hivp3tub8wg-(182!afpo5gn(tumg39pa2v$*7pgd$wnfk#2nc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "18.228.228.86", ]
+ALLOWED_HOSTS = ["127.0.0.1", "18.228.228.86", ]
 
 
 # Application definition
@@ -131,7 +130,7 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_ROOT = "/home/ubuntu/gestao_pessoas/static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
