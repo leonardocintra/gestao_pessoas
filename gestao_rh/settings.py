@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-hivp3tub8wg-(182!afpo5gn(tumg39pa2v$*7pgd$wnfk#2nc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "18.228.228.86", ]
+ALLOWED_HOSTS = ["18.228.228.86", ]
 
 
 # Application definition
@@ -127,9 +127,7 @@ MEDIA_ROOT = "media"
 MEDIA_URL = "media/"
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+
 STATIC_ROOT = "/home/ubuntu/gestao_pessoas/static"
 
 # Default primary key field type
