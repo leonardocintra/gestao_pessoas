@@ -26,7 +26,10 @@ SECRET_KEY = "django-insecure-hivp3tub8wg-(182!afpo5gn(tumg39pa2v$*7pgd$wnfk#2nc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["18.228.228.86", ]
+ALLOWED_HOSTS = [
+    "18.228.228.86", # AWS
+    "177.93.131.8",  # Magalu Cloud
+]
 
 
 # Application definition
