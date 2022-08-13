@@ -15,13 +15,31 @@
 
     <hr/>
 
+    <h2>Documentos</h2>
     <a href="{% url 'create_documento' object.id %}" class="btn btn-warning">Adicionar documento</a>
 
     <hr/>
+    <ul>
+        {% for documento in object.documento_set.all %}
+        <li>
+            <a href="{{ documento.arquivo.url }}" target="_blank">{{ documento }}</a>
+        </li>
+        {% endfor %}
+    </ul>
 
-    {% for documento in object.documento_set.all %}
-        <a href="{{ documento.arquivo.url }}" target="_blank">{{ documento }}</a>
-    {% endfor %}
+    <hr/>
+
+    <h2>Banco de Horas</h2>
+    <a href="{% url 'create_documento' object.id %}" class="btn btn-info">Cadastrar Hora Extra</a>
+
+    <hr/>
+    <ul>
+        {% for horaextra in object.registrohoraextra_set.all %}
+        <li>
+            {{ horaextra }} ({{ horaextra.horas }} horas)
+        </li>
+        {% endfor %}
+    </ul>
 
 </div>
 {% endblock main %}

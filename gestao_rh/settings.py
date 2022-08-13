@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+from distutils.log import debug
 from pathlib import Path
 
 
@@ -28,7 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "54.233.169.169", # AWS
-    "177.93.131.8",  # Magalu Cloud
+    "177.93.131.8",   # Magalu Cloud
+    "127.0.0.1",      # Desenvolvimento
 ]
 
 
@@ -131,7 +133,12 @@ MEDIA_URL = "media/"
 
 STATIC_URL = "static/"
 
+
 STATIC_ROOT = "/home/ubuntu/gestao_pessoas/static"
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
