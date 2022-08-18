@@ -17,12 +17,29 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework import routers
+from apps.core import views
+
+from apps.funcionarios.api.view import FuncionarioViewSet
+from apps.registro_hora_extra.api.view import RegistroHoraExtraViewSet
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+router.register(r'funcionarios', FuncionarioViewSet)
+router.register(r'horas-extras', RegistroHoraExtraViewSet)
+
 
 urlpatterns = [
+
+    # REST
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+
     path("admin/", admin.site.urls),
     path('', include('apps.core.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-
     path('empresas/', include('apps.empresas.urls')),
     path('departamentos/', include('apps.departamentos.urls')),
     path('documentos/', include('apps.documentos.urls')),
