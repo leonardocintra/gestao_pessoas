@@ -1,0 +1,8 @@
+version: '3.5'
+
+services:
+  redis:
+    image: redis
+    command: redis-server --requirepass gestaorh
+    ports:
+      - "6379:6379"
