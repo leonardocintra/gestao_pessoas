@@ -3,3 +3,4 @@ Django==4.1
 django-celery-results
 djangorestframework
 django-environ
+redis
